@@ -21,3 +21,27 @@ module.exports.validateLogin = ({ email, password }) => {
     if(!password || password.length < 1) errors = { ...errors, password: 'Enter your Password' };
     return errors;
 }
+
+module.exports.validateProfile = ({ status, skills }) => {
+    let errors = {};
+    if (!status || status.length < 1) errors = { ...errors, status: 'Please select a Status' };
+    if (!skills) errors = { ...errors, skills: 'Please enter at least one Skill' };
+    return errors;
+}
+
+module.exports.validateExpereince = ({ title, company, start }) => {
+    let errors = {};
+    if (!title || title.length < 1) errors = { ...errors, title: 'Title is required' };
+    if (!company || company.length < 1) errors = { ...errors, company: 'Company is required' };
+    if (!start || start.length < 1) errors = { ...errors, start: 'Start Date is required' };
+    return errors;
+}
+
+module.exports.validateEducation = ({ school, degree, studies, start }) => {
+    let errors = {};
+    if (!school || school.length < 1) errors = { ...errors, school: 'School is required' };
+    if (!degree || degree.length < 1) errors = { ...errors, degree: 'Degree is required' };
+    if (!studies || studies.length < 1) errors = { ...errors, studies: 'Field of Study is required' };
+    if (!start || start.length < 1) errors = { ...errors, start: 'Start Date is required' };
+    return errors;
+}

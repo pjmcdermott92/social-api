@@ -45,3 +45,7 @@ module.exports.validateEducation = ({ school, degree, studies, start }) => {
     if (!start || start.length < 1) errors = { ...errors, start: 'Start Date is required' };
     return errors;
 }
+
+module.exports.validateComment = ({ text }) => {
+    if (!text || text.length < 1) return { text: 'Please enter your Comment' };
+}
